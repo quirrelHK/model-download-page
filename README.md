@@ -3,6 +3,7 @@
 The **ITD (Indian Traffic Dataset)** is a large-scale dataset designed to advance research in **traffic video analytics** for Indian road environments.  
 It captures the complex and heterogeneous traffic conditions found across India, enabling tasks such as **turning movement counts**, **lane-based behavior analysis**, and **violation detection**.
 
+[Download Models](https://quirrelhk.github.io/model-download-page/)
 ---
 
 ## Dataset Overview

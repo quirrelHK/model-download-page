@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Download Model Weights</title>
+  <script>
+    // CONFIG — customize these values
+    const REDIRECT_URL = "https://github.com/quirrelHK/model-download-page/releases/download/model_weights/dataset_and_model_training_info-ITD_v1.3.xlsx";
+    const COUNTER_NAMESPACE = "quirrelHK";   // use your GitHub username
+    const COUNTER_KEY = "object_detection_weights";
+
+    // Increment download counter
+    fetch(`https://api.countapi.xyz/hit/${COUNTER_NAMESPACE}/${COUNTER_KEY}`)
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("count").textContent = data.value;
+      })
+      .catch(() => console.log("CountAPI unavailable"));
+
+    // Redirect user after short delay
+    setTimeout(() => {
+      window.location.href = REDIRECT_URL;
+    }, 2000);
+  </script>
+
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #1e293b;
+      text-align: center;
+      margin: 0;
+    }
+    h1 { font-size: 1.6rem; margin-bottom: 0.5rem; }
+    p { margin: 0.25rem 0; }
+    .count {
+      background: #e2e8f0;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      background: #2563eb;
+      color: white;
+      padding: 0.75rem 1.25rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    a.button:hover { background: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Downloading Object Detection Model Weights…</h1>
+  <p>You’ll be redirected in a moment.</p>
+  <p>If not, <a href="#" id="manual">click here to download manually.</a></p>
+
+  <div class="count">Total downloads: <span id="count">—</span></div>
+
+  <script>
+    document.getElementById("manual").href = REDIRECT_URL;
+  </script>
+</body>
+</html>

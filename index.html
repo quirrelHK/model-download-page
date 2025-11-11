@@ -3,83 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Model Weights Hub</title>
+  <title>ITD Model Weights</title>
   <style>
     body {
       font-family: system-ui, sans-serif;
       background: #f8fafc;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-      margin: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      height: 100vh; text-align: center;
       color: #1e293b;
     }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    p {
-      margin-bottom: 1.5rem;
-      color: #475569;
-    }
-    select {
-      font-size: 1rem;
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-      border: 1px solid #cbd5e1;
-      background: white;
-      margin-right: 0.5rem;
+    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    p { color: #475569; margin-bottom: 1.5rem; }
+    select, button {
+      font-size: 1rem; padding: 0.5rem 1rem;
+      border-radius: 0.5rem; border: 1px solid #cbd5e1;
     }
     button {
-      font-size: 1rem;
-      background: #2563eb;
-      color: white;
-      border: none;
-      padding: 0.5rem 1.25rem;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      transition: background 0.2s ease;
+      background: #2563eb; color: white; border: none;
+      margin-left: 0.5rem; cursor: pointer;
     }
-    button:hover {
-      background: #1d4ed8;
-    }
-    footer {
-      position: absolute;
-      bottom: 1rem;
-      font-size: 0.875rem;
-      color: #94a3b8;
-    }
+    button:hover { background: #1d4ed8; }
+    footer { position: absolute; bottom: 1rem; color: #94a3b8; }
   </style>
 </head>
 <body>
-  <h1>Download Pretrained Model Weights</h1>
-  <p>Select a model below to download its weights:</p>
+  <h1>Download Pretrained ITD Model Weights</h1>
+  <p>Select a model to download:</p>
 
   <div>
     <select id="modelSelect">
       <option value="">-- Choose a model --</option>
-      <option value="model_weights/download_v1_1.html">ITD v1.1</option>
-      <option value="model_weights/download_v1_2.html">ITD v1.2</option>
+      <option value="model_weights/download_v1.html">ITD v1.1</option>
+      <option value="model_weights/download_v2.html">ITD v1.2</option>
     </select>
     <button onclick="redirectToModel()">Go</button>
   </div>
 
   <footer>
-    © 2025 Your Name · Non-commercial research use only
+    © 2025 IIT Roorkee · Non-commercial research use only
   </footer>
 
   <script>
     function redirectToModel() {
-      const select = document.getElementById('modelSelect');
-      const value = select.value;
-      if (!value) {
-        alert('Please select a model.');
-        return;
-      }
-      window.location.href = value;
+      const val = document.getElementById('modelSelect').value;
+      if (!val) return alert('Please select a model.');
+      window.location.href = val;
     }
   </script>
 </body>

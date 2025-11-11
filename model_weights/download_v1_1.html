@@ -27,9 +27,16 @@
     const WORKER = "https://model-counter-proxy.riteshsingh9827.workers.dev";
 
     async function fetchCount() {
-      const res = await fetch(`${WORKER}/?counter=${COUNTER}&action=stats`);
-      const data = await res.json();
-      document.getElementById("count").textContent = data.value ?? "—";
+      try{
+
+          const res = await fetch(`${WORKER}/?counter=${COUNTER}&action=stats`);
+          const json = await res.json();
+          const count = json.data?.up_count ?? "—";
+          document.getElementById("count").textContent = count;
+      } catch (err) {
+        console.error("Error fetching count:", err);
+        document.getElementById("count").textContent = "—";
+      }
     }
 
     async function startDownload() {

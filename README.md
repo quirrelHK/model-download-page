@@ -165,7 +165,7 @@ The pretrained models are released under the:
 
 **Citation / Acknowledgment**  
 > If you use this dataset or derivative models, please cite:  
-> *"ITD – Indian Traffic Dataset (2024), IIT Roorkee, India."*
+> *Agarwal, Amit, Anurag Thombre, Kabir Kedia and Indrajit Ghosh (2024). “ITD: Indian Traffic Dataset for Intelligent Transportation Systems”. In 16th International Conference on COMmunication Systems & NETworkS (COMSNETS), Bengaluru, India DOI:10.1109/COMSNETS59351.2024.10427394*
 
 ---
 
